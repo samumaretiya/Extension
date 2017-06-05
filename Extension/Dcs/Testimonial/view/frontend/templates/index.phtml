@@ -1,0 +1,47 @@
+<?php
+$gridRecords = $block->getCollection();
+?>
+<div class="dcs-testimonial-content">
+   
+    <?php if ($gridRecords && count($gridRecords)): ?>
+        <?php foreach ($gridRecords as $record): ?>
+            <div id="row">
+                <?php /* ?><div id="logo">
+                    <a href="">
+                        <?php echo $block->getImage($record['avatar']); ?>
+                    </a>
+                </div><?php */ ?>
+                <div id="right">
+                    <div class="content">
+                        <?php echo $record['testimonial'] ?>
+						<div class="author">
+                            <?php echo $record['name']; ?>
+                        </div>
+                        <div class="date">
+                            <?php echo $record['created_time'] ?>
+                        </div>
+                    </div>
+                    <div class="footer">
+                    </div>
+                </div>
+                <div class="clr"></div>
+            </div>
+        <?php endforeach; ?>
+    <?php else : ?>
+        <div class="message info empty">
+        <span>
+            <?php echo __('Testimonial records not available.'); ?>
+        </span>
+        </div>
+    <?php endif ?>
+	 <?php if ($block->getPagerHtml()): ?>
+        <div class="dcs-testimonial-toolbar toolbar bottom">
+            <?php echo $block->getPagerHtml(); ?>
+        </div>
+    <?php endif ?>
+    <?php /* ?><div class="dcs-testimonial-new-button-container">
+        <a href="<?php //echo $block->getNewUrl(); ?>" title="<?php echo __('Submit Your Testimonial'); ?>">
+            <button class="action primary"><span><?php echo __('Submit Your Testimonial'); ?></span></button>
+        </a>
+    </div><?php */ ?>
+</div>

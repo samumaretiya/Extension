@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="contactsus_email_email_template" label="Contacts Enquiry Email" file="contact_form.html" type="html" module="Dcs_Contactus" area="frontend"/>
+</config>

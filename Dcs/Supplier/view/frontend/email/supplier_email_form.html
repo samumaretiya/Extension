@@ -1,0 +1,59 @@
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Supplier Enquiry"}} @-->
+<!--@vars {
+"var message":"Comment",
+"var contact_person":"Contact Person",
+"var company_name":"Company Name",
+"var address":"Address",
+"var website":"Website",
+"var email":"Email",
+"var phone_no":"Phone No"
+
+} @-->
+
+{{template config_path="design/email/header_template"}}
+                    
+<table cellpadding="0" cellspacing="0" border="0" class="supplier_form_detail" style="width:100%">
+    <tr><td><h2  style="text-align:center;">Supplier Form  Details</h2></td></tr>
+    <tr>
+        <td>
+			<table border="1" style="width:100%">				
+				<tr>
+					<td style="width:250px; padding:0 0 0 10px;"><b>Contact Person</b></td>
+					<td style="width:250px; padding:0 0 0 10px;">{{var contact_person}}</td>
+				</tr>
+				<tr>
+					<td style="width:250px; padding:0 0 0 10px;"><b>Company Name</b></td>
+					<td style="width:250px; padding:0 0 0 10px;">{{var company_name}}</td>
+				</tr>
+				<tr>
+					<td style="width:250px; padding:0 0 0 10px;"><b>Address</b></td>
+					<td style="width:250px; padding:0 0 0 10px;">{{var address}}</td>
+				</tr>
+				<tr>
+					<td style="width:250px; padding:0 0 0 10px;"><b>Website</b></td>
+					<td style="width:250px; padding:0 0 0 10px;">{{var website}}</td>
+				</tr>
+				<tr>
+					<td style="width:250px; padding:0 0 0 10px;"><b>Email</b></td>
+					<td style="width:250px; padding:0 0 0 10px;">{{var email}}</td>
+				</tr>
+				<tr>
+					<td style="width:250px; padding:0 0 0 10px;"><b>Phone No</b></td>
+					<td style="width:250px; padding:0 0 0 10px;">{{var phone_no}}</td>
+				</tr>
+				<tr>
+					<td style="width:250px; padding:0 0 0 10px;"><b>Comment</b></td>
+					<td style="width:250px; padding:0 0 0 10px;">{{var message}}</td>
+				</tr>
+			</table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}
