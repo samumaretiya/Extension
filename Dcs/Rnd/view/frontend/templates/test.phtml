@@ -1,0 +1,25 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\Collection');
+$productCollection->addFieldToFilter('type_id', ['eq' => 'configurable']);
+$productCollection->load();
+
+
+foreach($productCollection as $configurable)
+{
+		//$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+		//$product = $objectManager->create('Magento\Catalog\Model\Product')->load((int)$configurable->getId());
+		//print_r($product->getData());
+}
+
+?>
+https://github.com/colinmurphy/magento-exam-notes/blob/master/9.Sales%20%26%20Customers/2.%20Customers/1.%20Describe%20the%20architecture%20of%20the%20customer%20module.md
+
+Worked Frontend & Backend development UAT - 7 organic
+
+1. placing order issue		- done
+2. Save Exclusion & Favourite At quote level for simple order - done 
+
+Worked Frontend & Backend development - 2 
+
+3. Magento 2 extension learning frontend view rendering - done
