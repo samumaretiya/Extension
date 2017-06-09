@@ -1,0 +1,232 @@
+https://www.braintreepayments.com/blog/pci-compliance-basics-for-credit-card-security/
+AIzaSyBU1MbtMAJ3Gu4tzwaLVW_VLbonuJ9flmo
+wget http://organic-angels.23digital-prod4.com/recurring_cron.php  What about tons of certified developer left firm. Is it sign of bad managment or something else ? where is employee growth ? People left bad manager not a company. It's really sham things for company. This is the way you should not attract employee
+by any means if you're not able to look after him.
+CPanel Details
+=================================== UPDATE `importsecondfiledata` SET STATUS =0; productdelivery_deliveryshipping_Tue flatrate_flatrate
+https://sg2.fcomet.com:2083 production 4 2017-02-27 09:30:00 
+Username: digitalp
+Password: Bi7rig10M9 Bi7rig12D5
+FTP Host: sg2.fcomet.com   
+IP: 139.162.13.242
+
+i6y9x8r0t
+
+superadmin
+admin123
+
+Username : milople_support
+Password : milople_support@123
+
+https://www.milople.com/knowledgebase/recurringsubscriptionpayments.html#Subscriptions%20Not%20being%20processed%20on%20Given%20due%20date
+
+http://organicangels.23digital-prod2.com/
+URL: http://cpanel.sm4.siteground.biz 
+Username: c23digi9 
+Password: lsB2#Bv7tF product 2
+
+FTP Username: shah@23digital-prod2.com
+FTP Server: ftp.23digital-prod2.com
+FTP & explicit FTPS port: 21
+shah@23digital-prod2.com
+4k^tAlsusv$@
+==========================================
+http://organic-angels.23digital-prod4.com/
+
+Live key : cbb3020af8307555c284b4764422796ff3155177
+Dev Key  : fbe46fbb31899c00d3d3c6da5f83b7a52bd9194c
+
+User: digitalp_orgusr
+Pass: organic@123
+Database: digitalp_organicdb
+
+test9.23digital@gmail.com
+
+123456 
+
+
+www.organicangels.com/admin
+username: 23digital
+pw: grEi84Jc
+
+
+www.organicangels.com/cpanel
+
+
+
+username: organica
+pw: jAQ5%Y*q
+
+http://organicangels.23digital-prod2.com/
+Subscription Extension
+
+
+http://sarp2.demo.aheadworks.com/
+
+==========================================
+
+sm4.siteground.biz
+User: c23digi9
+Pass: lsB2#Bv7tF
+
+app/code/local/Dcs/Paymentcuttime/Model/Observer.php	March 10 2017 17:43:51
+app/code/local/Indies/Recurringandrentalpayments/Model/Order/Create.php	December 17 2016 07:50:28
+app/code/local/Indies/Recurringandrentalpayments/Model/Subscription.php
+
+Indies_Recurringandrentalpayments_Model_Mysql4_Subscription_Collection
+
+DELIMITER $$
+	CREATE TRIGGER after_subscriptioncreate1 
+		AFTER INSERT ON emp
+		FOR EACH ROW 
+	BEGIN
+	END$$
+DELIMITER ;
+
+SELECT * FROM INFORMATION_SCHEMA.TRIGGERS
+
+DELIMITER $$
+	CREATE TRIGGER after_recurringandrentalpayments_subscription 
+		AFTER INSERT ON recurringandrentalpayments_subscription
+		FOR EACH ROW 
+	BEGIN
+		insert into subscription_audit (subscription_id, primary_quote_id,current_quote_id,status) values(new.id,new.primary_quote_id,new.current_quote_id,new.status);
+	END $$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER after_recurringandrentalpayments_subscription
+	AFTER INSERT ON recurringandrentalpayments_subscription
+	FOR EACH ROW 
+BEGIN
+	insert into subscription_audit (subscription_id, primary_quote_id,current_quote_id)values(new.id,new.primary_quote_id,new.current_quote_id);
+END $$
+DELIMITER ;
+
+
+DELIMITER $$
+	CREATE TRIGGER after_recurringandrentalpayments_subscription 
+		AFTER INSERT ON recurringandrentalpayments_subscription 
+		FOR EACH ROW 
+	BEGIN 
+		insert into subscription_audit (`subscription_id`, `primary_quote_id`,`current_quote_id`)values(new.subscription_id,new.primary_quote_id,new.current_quote_id);
+	END $$
+DELIMITER ;
+
+DROP TRIGGER after_recurringandrentalpayments_subscription;
+
+CREATE TABLE `subscription_audit` (
+ `subscription_id` int(11) NOT NULL,
+ `primary_quote_id` int(11) NOT NULL,
+ `current_quote_id` int(11) NOT NULL,
+ `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+
+bhavesh.php: Live Server Details For Organic Angels
+
+https://c30894.sgvps.net:2083
+Username: sachs926
+Password: Z1zQuIG2kw5I
+
+================================
+(12:27) bhavesh.php: 77.104.158.115/~sachs926/
+(12:30) bhavesh.php: User: sachs926_angels 
+Database: sachs926_organic
+Pass: -v)b}aWVL]HQ
+
+Product: Simplify Bulk Order Processing - URL: organic-angels.23digital-prod4.com - License Key: 430abc47ac0732106d4faddab473e6e4c9ff1985
+Product: Simplify Bulk Order Processing - URL: organicangels.com - License Key: b011d7f26b72d2e600b87d390ab0d9f9a133ece6
+Product: Simplify Bulk Order Processing - URL: 77.104.158.115 - License Key: e2215ab5374cf3c21f3ca48809cafe1907545c42
+Product: Simplify Bulk Order Processing - URL: staging.organicangels.com - License Key: c19c5d8ec0677987948cf4b105c5824a1afd64e3
+
+
+Reacurring module
+
+http://staging.organicangels.com/ given as below:
+
+Key : ca480a338da11efe8e60bd8bdd09716d6c5ddc2e
+
+
+
+CREATE TABLE `sale_flat_order_payment_saved` (
+ `id` int(11) NOT NULL,
+ `is_saved` tinyint(4) NOT NULL,
+ PRIMARY KEY (`id`),
+ KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+
+/public_html/organic-angels/app/code/local/Dcs/Paymentcuttime/Model
+/public_html/organic-angels/app/code/local/Indies/Recurringandrentalpayments/Model/Order/Create.php
+/public_html/organic-angels/app/code/local/Dcs/Paymentcuttime/etc
+/public_html/organic-angels/app/design/adminhtml/default/default/template/sales/order/view
+app/code/community/Gene/Braintree/Model/Paymentmethod/Creditcard.php
+
+CREATE TABLE `sale_flat_order_payment_saved` (
+ `id` int(11) NOT NULL,
+ `is_saved` tinyint(4) NOT NULL,
+ `quote_id` int(11) NOT NULL DEFAULT '0',
+ `token` varchar(255) NOT NULL,
+ KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+ALTER TABLE user_customer_permission DROP PRIMARY KEY;
+
+google captch account
+
+test11.23digital@gmail.com
+
+UNQ_SALES_PAYMENT_TRANSACTION_ORDER_ID_PAYMENT_ID_TXN_ID
+
+DROP INDEX UNQ_SALES_PAYMENT_TRANSACTION_ORDER_ID_PAYMENT_ID_TXN_ID ON sales_payment_transaction
+
+/* --------------------- */
+		$shipping_description = $this->getQuote()->getCustomShipping();
+		$shippingTitle = explode("-",$shipping_description);
+
+		$data = explode(" ",trim(end(explode("-",$shipping_description))));
+	
+		if($data[0] == "Pick"):
+			$shippingDatedata = $data[3]." ".$data[4]." ".$data[5];
+			$shippingdateString     = $shippingTitle[0]." - Pick Up ".date('D d M',strtotime($shippingDatedata));
+		else:
+			$shippingDatedata		=  end(array_reverse(explode("(",end(explode("-",$shipping_description)))));
+			$shippingdateString     = $shippingTitle[0]." - ".date('D d M',strtotime($shippingDatedata))." (".explode("(",$shippingTitle[1])[1];
+		endif;
+		Mage::log($shippingdateString,null,"shippingdateString.log");
+		$this->getQuote()->setCustomShipping($shippingdateString);
+		/* --------------------- */
+		
+		
+Indies_Recurringandrentalpayments_Model_Order_Create
+Dcs_Paymentcuttime_Model_Observer
+
+https://github.com/magento/magento2/issues/5823
+
+app/code/local/Indies/Recurringandrentalpayments/Model/Order
+app/code/local/Dcs/Customexclutionfavorite
+
+sales_flat_order_custom_transaction
+
+
+The following are sandbox url for braintree
+
+Url 	 : https://sandbox.braintreegateway.com
+Username : accounts@organicangels.com.au
+Passowrd :shah0708
+
+1) Go to transaction tab from left panel and click on search button to see transaction ocurred on the site
+
+card number 
+
+4111111111111111
+
+Cvv 123
+
+Let me know if you need anything else from my end.
+
+Thanks,
+
+Sagar
+
