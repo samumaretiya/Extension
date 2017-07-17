@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add 
+			 id="Dcs_Supplier::supplier_manage" 
+			 title="Manage Supplier" module="Dcs_Supplier" 
+			 sortOrder="10" parent="Dcs_Contactus::contactus"
+			 resource="Dcs_Supplier::supplier_manage"
+		/>
+	    <add 
+			 id="Dcs_Supplier::supplier_suppliers" 
+			 title="Become a Supplier Manager" module="Dcs_Supplier" 
+			 sortOrder="20" parent="Dcs_Supplier::supplier_manage" 
+			 action="dcs_supplier/index"
+			 resource="Dcs_Supplier::supplier_suppliers"
+		/> 
+		<add 	 
+			 id="Dcs_Supplier::supplier_settings" 
+			 title="Settings" module="Dcs_Supplier" 
+			 sortOrder="30" parent="Dcs_Supplier::supplier_manage" 
+			 action="adminhtml/system_config/edit/section/supplier"
+			 resource="Dcs_Supplier::supplier_settings"
+		/> 
+    </menu>
+</config>

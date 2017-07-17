@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright (c) 2016 www.dcs.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dcs_Testimonial::content" title="Testimonial" module="Dcs_Testimonial" sortOrder="50" parent="Dcs_Contactus::contactus" resource="Dcs_Testimonial::content" />
+        <add id="Dcs_Testimonial::testimonial" title="Manage Testimonial" module="Dcs_Testimonial" sortOrder="0" parent="Dcs_Testimonial::content" action="testimonial/memo" resource="Dcs_Testimonial::testimonial"/>
+    </menu>
+</config>

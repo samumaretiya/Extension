@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+		
+		<referenceBlock name="top.links">
+			<referenceBlock name="register-link" remove="true" />           
+			<referenceBlock name="authorization-link" remove="true" />     
+			<referenceBlock name="wish-list-link" remove="true" />         
+			<referenceBlock name="my-account-link" remove="true" />        
+	    </referenceBlock>
+    
+		<referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">148</argument>
+                <argument name="logo_img_height" xsi:type="number">43</argument>
+            </arguments>
+        </referenceBlock>
+		
+		<referenceContainer name="header-wrapper">
+		
+			<container name="custom-header-right-container" label="custom-header-right-container" htmlTag="div" htmlClass="custom-header-right-container">
+				<block class="Magento\Cms\Block\Block" name="header-top-links" before="top.search">
+					<arguments>
+						<argument name="block_id" xsi:type="string">header_top_links</argument>
+					</arguments>
+				</block>
+				<block after="top.search" class="Magento\Framework\View\Element\Template" name="customsignlinks" as="customsignlinks" template="Magento_Theme::html/customsignlinks.phtml" cacheable="false"/>
+			</container>
+
+		</referenceContainer>
+		
+		<referenceContainer name="page.wrapper">
+			<container name="minicart-overlay" label="minicart-overlay" htmlTag="div" htmlClass="minicart-overlay" before="main.content">
+				<block class="Magento\Framework\View\Element\Template" name="blanktemplate" as="blanktemplate" template="Magento_Theme::html/blanktemplate.phtml"/>
+			</container>
+		</referenceContainer>
+		
+		
+		<!--
+		<referenceContainer name="content">
+			<block class="Magento\Cms\Block\Block" name="home-mini-banner" before="top.search">
+				<arguments>
+					<argument name="block_id" xsi:type="string">home_page_mini_banner</argument>
+				</arguments>
+			</block>
+    	</referenceContainer>
+		-->
+		
+        <referenceContainer name="footer">
+			
+            <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher"  after="footer_links" template="switch/stores.phtml"/>
+			
+			<container name="custom-footer-newsletter-container" label="custom-footer-newsletter-container" htmlTag="div" htmlClass="custom-footer-newsletter-container">
+				<block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" before="-" template="subscribe.phtml"/>
+			</container>
+			
+			<container name="custom-footer-links-container" label="custom-footer-links-container" htmlTag="div" htmlClass="custom-footer-links-container">
+				<block class="Magento\Framework\View\Element\Template" name="customfooterlinks" as="customfooterlinks" template="Magento_Theme::html/customfooterlinks.phtml"/>
+			</container>
+			
+        </referenceContainer>
+        
+		<referenceContainer name="before.body.end">
+			<block class="Magento\Framework\View\Element\Template" name="gototop" as="gototop" template="Magento_Theme::html/gototop.phtml"/>
+		</referenceContainer>
+		
+		<referenceBlock name="report.bugs" remove="true"/>
+		<referenceBlock name="privacy-policy-link" remove="true"/>
+		<referenceBlock name="search-term-popular-link" remove="true"/>
+		<referenceBlock name="contact-us-link" remove="true"/>
+		<referenceBlock name="catalog-search-advanced-link" remove="true"/>
+		<referenceBlock name="sales-guest-form-link" remove="true"/>
+		
+        <move element="copyright" destination="before.body.end"/>
+		<move element="top.search" destination="custom-header-right-container"/>
+		<move element="customsignlinks" destination="custom-header-right-container"/>
+		<move element="minicart" destination="custom-header-right-container"/>
+		<!--<move element="minicart-overlay" destination="page-header"/>-->
+		
+    </body>
+</page>

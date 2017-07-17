@@ -1,0 +1,14 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php 
+	$object = \Magento\Framework\App\ObjectManager::getInstance();
+    $IsHome = $object->get('\Magento\Theme\Block\Html\Header\Logo')->isHomePage();
+
+?>	
+<small class="copyright">
+    <span><?php /* @escapeNotVerified */ echo $block->getCopyright() ?><?php if($IsHome){ ?> | <a href="http://www.23digital.com.au/web-design/" title="Website Design" target="_blank">Website Design </a>By  <a href="http://www.23digital.com.au/" target="_blank" title="Digital Agencies"> 23 Digital</a><?php } ?></span>
+</small>

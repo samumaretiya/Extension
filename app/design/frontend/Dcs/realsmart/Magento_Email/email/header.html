@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        {{var template_styles|raw}}
+    </style>
+</head>
+<body>
+{{inlinecss file="css/email-inline.css"}}
+<!-- Begin wrapper table -->
+<table class="wrapper" width="100%">
+    <tr>
+        <td class="wrapper-inner" align="center">
+            <table class="main" align="center" style="border: 2px solid #1aa6b7;">
+                <tr>
+                    <td class="header" style="border-bottom: 2px solid #1aa6b7; background-color:#fff !important;background-image: none !important;">
+                        <a class="logo" href="{{store url=""}}" style="display:block;">
+                            <img
+                                {{if logo_width}}
+                                    width="{{var logo_width}}"
+                                {{else}}
+                                    width="144"
+                                {{/if}}
+
+                                {{if logo_height}}
+                                    height="{{var logo_height}}"
+                                {{else}}
+                                    height="90"
+                                {{/if}}
+
+                                src="{{var logo_url}}"
+                                alt="{{var logo_alt}}"
+                                border="0"
+                            />
+                        </a></td>
+					<td valign="middle" class="header-right-bg" style="background-color: #1aa6b7 !important; vertical-align:middle;border-bottom: 1px solid #CCC; background-color:#1aa6b7 !important;  text-align: right; !important; ">
+						<div class="header-right" style="float:right; padding-right:20px;">
+								
+                					{{depend store_phone}}
+                                        <p class="phone">
+                                           <span style="display:inline; color:#fff; font-weight:bold;">Phone:</span> {{trans '<a href="tel:%store_phone" style="color:#fff;">%store_phone</a>' store_phone=$store_phone |raw}}
+                                        </p>
+                					{{/depend}}
+							  		{{depend store_email}}	
+										<p class="email">
+										       <span style="display:inline; color:#fff; font-weight:bold;">Email:</span> {{trans '<a href="tel:%store_email" style="color:#fff;">%store_email</a>' store_email=$store_email |raw}}	
+										</p>	
+									{{/depend}}
+						</div>	
+                		
+           	
+                    </td>
+			
+                </tr>
+                <tr>
+                    <td class="main-content" style="padding:15px" colspan="2">
+                    <!-- Begin Content -->

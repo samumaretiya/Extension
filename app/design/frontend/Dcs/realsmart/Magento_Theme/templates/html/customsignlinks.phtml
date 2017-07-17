@@ -1,0 +1,37 @@
+<?php
+    $objectManagerlogin = \Magento\Framework\App\ObjectManager::getInstance();
+    $customerSession = $objectManagerlogin->get('Magento\Customer\Model\Session');
+    $baseurl = $objectManagerlogin->get('Magento\Store\Model\StoreManagerInterface')->getStore(0)->getBaseUrl();
+?>
+<div class="accountwrapper">
+	
+	<div class="login-account-title">
+		
+		<a title="Login / Create New Account" href="javascript:void(0)"  class="login-account-icon">
+			<em>Login / Create New Account</em>
+		</a>
+
+		<div class="logout-popup">
+			<div class="logout-popup-inner"> 
+				
+				<?php if($customerSession->isLoggedIn()) : ?>
+
+					<a title="Logout" href="<?php echo $baseurl .'customer/account/logout'; ?>"> <span class="label">Logout</span> </a>
+					<a title="My Account" href="<?php echo $baseurl .'customer/account'; ?>">
+						<span class="label">My Account</span>
+					</a>
+				<?php else : ?>
+				
+					<a title="Login" href="<?php echo $baseurl .'customer/account/login'; ?>"> <span class="label">Login</span> </a> 
+					<a title="Create New Account" href="<?php echo $baseurl .'customer/account/create'; ?>">
+						<span class="label">Create New Account</span>
+					</a>
+			
+				<?php endif ; ?>
+				
+			</div>
+	  </div>
+		
+   </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+        <div class="cf footer-links-outer">
+			
+			<?php
+					$helper = $this->helper('Magestore\Bannerslider\Helper\Data');
+					$device_check = $helper->Checkdevice();
+			?>
+			<?php if($device_check==1){  //// Mobile ?>
+			
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('mobile_footer_section_1')->toHtml(); ?>
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('mobile_footer_section_2')->toHtml(); ?>
+			
+			<?php }else{ /// Desktop  ?>
+			
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_section_1')->toHtml(); ?>
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_section_2')->toHtml(); ?>
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_section_3')->toHtml(); ?>
+				<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_section_4')->toHtml(); ?>
+			
+			<?php } ?>
+		</div>
+</div>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+		<referenceBlock name="product.info.details">
+			<referenceBlock name="product.attributes" remove="true" />
+			 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description" template="product/view/attribute.phtml" group="detailed_info">
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getDescription</argument>
+						<argument name="priority" xsi:type="string">1</argument>
+                        <argument name="at_code" xsi:type="string">description</argument>
+                        <argument name="css_class" xsi:type="string">description</argument>
+                        <argument name="at_label" xsi:type="string">none</argument>
+                        <argument name="title" translate="true" xsi:type="string">Product Description</argument>
+                    </arguments>
+                </block>
+			 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.warranty" template="product/view/warranty.phtml" group="detailed_info" before="product.info.review">
+                   <arguments>
+                        <argument name="at_call" xsi:type="string">getWarranty</argument>
+					   <argument name="priority" xsi:type="string">2</argument>
+                        <argument name="at_code" xsi:type="string">name</argument>
+                        <argument name="css_class" xsi:type="string">name</argument>
+                        <argument name="at_label" xsi:type="string">none</argument>
+                        <argument name="title" translate="true" xsi:type="string">Warranty</argument>
+                    </arguments>
+             </block>
+			<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.delivery" template="product/view/delivery.phtml" group="detailed_info">
+                   <arguments>
+                        <argument name="at_call" xsi:type="string">getDelivery</argument>
+					   <argument name="priority" xsi:type="string">3</argument>
+                        <argument name="at_code" xsi:type="string">name</argument>
+                        <argument name="css_class" xsi:type="string">name</argument>
+                        <argument name="at_label" xsi:type="string">none</argument>
+                        <argument name="title" translate="true" xsi:type="string">Delivery</argument>
+                    </arguments>
+             </block>
+		</referenceBlock>
+		<referenceBlock name="reviews.tab">
+            <arguments>
+                <argument name="priority" xsi:type="string">4</argument>
+            </arguments>
+        </referenceBlock>
+		
+		<referenceContainer name="product.info.extrahint">
+			<block class="Magento\Catalog\Block\Product\View" name="addthislinks" as="addthislinks" template="Magento_Catalog::product/view/socialsharing.phtml"/>
+		</referenceContainer>
+		
+		<referenceContainer name="product.info.main">
+        	<container before="product.info.extrahint" name="product.info.form.content.qtycartwishlist" label="product.info.form.content.qtycartwishlist" htmlTag="div" htmlClass="product-info-form-content-qtycartwishlist">
+			</container>
+		</referenceContainer>
+		
+		<referenceContainer name="content">
+			<container before="product.info.details" name="product.info.and.media" label="product.info.and.media" htmlTag="div" htmlClass="product-info-and-media">
+			</container>
+		</referenceContainer>
+		
+		<move element="page.main.title" destination="product.info.main" before="-"/>
+        <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
+        <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+		<move element="product.info.overview" destination="product.info.main" after="product.info.price"/>
+	
+		<move element="product.info" destination="product.info.form.content.qtycartwishlist" />
+		<move element="product.info.social" destination="product.info.form.content.qtycartwishlist"/>
+		
+		<move element="product.info.main" destination="product.info.and.media" before="product.info.details"/>
+		<move element="product.info.media" destination="product.info.and.media"  before="product.info.main"/>
+		
+	
+		<referenceBlock name="view.addto.compare" remove="true" />
+		<referenceBlock name="product.info.mailto" remove="true" />
+		<referenceBlock name="product.info.sku" remove="true" />
+		<referenceBlock name="related.product.addto.compare" remove="true" />
+    </body>
+</page>

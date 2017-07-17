@@ -1,0 +1,18 @@
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Newsletter subscription success"}} @-->
+<!--@vars {
+"template config_path=\"design\/email\/footer_template\"":"Email Footer Template",
+"template config_path=\"design\/email\/header_template\"":"Email Header Template"
+} @-->
+
+
+{{template config_path="design/email/header_template"}}
+
+<p>Thank you for subscribing to the {{trans "%store_name" store_name=$store.getFrontendName() |raw}} Online Newsletter, we hope you enjoy reading it.To unsubscribe at any time, please click <a href='{{trans "%lastName" lastName=$subscriber.getUnsubscriptionLink()}}'>here</a>.</p>   
+
+{{template config_path="design/email/footer_template"}}

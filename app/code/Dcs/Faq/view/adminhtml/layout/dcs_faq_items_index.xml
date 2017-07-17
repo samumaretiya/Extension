@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Dcs. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--referenceContainer name="content">
+            <uiComponent name="faq_items_grid"/>
+        </referenceContainer-->
+		<referenceBlock name="page.title">
+    	    <action method="setPageTitle">
+    	        <argument name="pageTitle" xsi:type="string">FAQ's Manager</argument>
+    	    </action>
+    	</referenceBlock>
+        <referenceContainer name="content">
+            <block class="Dcs\Faq\Block\Adminhtml\Items" name="adminhtml.block.promo.quote.grid.container">
+                <block class="Magento\Backend\Block\Widget\Grid" name="adminhtml.block.promo.quote.grid" as="grid">
+                    <arguments>
+                        <argument name="id" xsi:type="string">dcs_faq_items_grid</argument>
+                        <argument name="dataSource" xsi:type="object">Dcs\Faq\Model\Resource\Items\Collection</argument>
+                        <argument name="default_sort" xsi:type="string">sort_order</argument>
+                        <argument name="default_dir" xsi:type="string">ASC</argument>
+                        <argument name="save_parameters_in_session" xsi:type="string">1</argument>
+                    </arguments>
+
+                    <block class="Magento\Backend\Block\Widget\Grid\Massaction" 
+                        name="dcs_faq_items.grid.massaction" as="grid.massaction">
+                        <arguments>
+                            <argument name="massaction_id_field" xsi:type="string">id</argument>
+                            <argument name="form_field_name" xsi:type="string">items</argument>
+                            <argument name="options" xsi:type="array">
+                                <item name="delete" xsi:type="array">
+                                    <item name="label" xsi:type="string" translate="true">
+                                        Delete
+                                    </item>
+                                    <item name="url" xsi:type="string">*/*/massDelete</item>
+                                    <item name="confirm" xsi:type="string" translate="true">
+                                        Are you sure you want to delete?
+                                    </item>
+                                </item>                                 
+                                <item name="publish" xsi:type="array">                                
+                                    <item name="label" xsi:type="string" translate="true">
+                                        Publish
+                                    </item>
+                                    <item name="url" xsi:type="string">*/*/massPublish</item>
+                                </item>
+                                <item name="unpublish" xsi:type="array">                             
+                                    <item name="label" xsi:type="string" translate="true">
+                                        UnPublish
+                                    </item>
+                                    <item name="url" xsi:type="string">*/*/massUnpublish</item>
+                                </item>                              
+                            </argument>
+                        </arguments>
+                    </block>
+
+                    <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" as="grid.columnSet" name="adminhtml.promo.quote.grid.columnSet">
+                        <arguments>
+                            <argument name="rowUrl" xsi:type="array">
+                                <item name="path" xsi:type="string">dcs_faq/*/edit</item>
+                                <item name="extraParamsTemplate" xsi:type="array">
+                                    <item name="id" xsi:type="string">getId</item>
+                                </item>
+                            </argument>
+                        </arguments>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="id">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">ID</argument>
+                                <argument name="type" xsi:type="string">number</argument>
+                                <argument name="index" xsi:type="string">id</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="question">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Question</argument>
+                                <argument name="index" xsi:type="string">question</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="category">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Category</argument>
+                                <argument name="type" xsi:type="string">options</argument>
+                                <argument name="options" xsi:type="options" model="Dcs\Faq\Model\Grid\Category"></argument>
+                                <argument name="index" xsi:type="string">category</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="rank">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Rank</argument>
+                                <argument name="type" xsi:type="string">number</argument>
+                                <argument name="index" xsi:type="string">rank</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="publish">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Publish</argument>
+                                <argument name="type" xsi:type="string">options</argument>
+                                <argument name="options" xsi:type="options" model="Dcs\Faq\Model\Grid\Status"></argument>
+                                <argument name="index" xsi:type="string">status</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="action">
+                        <arguments>
+                            <argument name="id" xsi:type="string">action</argument>
+                            <argument name="header" xsi:type="string" translate="true">
+                                Action
+                            </argument>
+                            <argument name="type" xsi:type="string">action</argument>
+                            <argument name="getter" xsi:type="string">getId</argument>
+                            <argument name="filter" xsi:type="boolean">false</argument>
+                            <argument name="sortable" xsi:type="boolean">false</argument>
+                            <argument name="index" xsi:type="string">stores</argument>
+                            <argument name="is_system" xsi:type="boolean">true</argument>
+                            <argument name="actions" xsi:type="array">
+                                <item name="view_action" xsi:type="array">
+                                    <item name="caption" xsi:type="string" translate="true">
+                                        Edit
+                                    </item>
+                                    <item name="url" xsi:type="array">
+                                        <item name="base" xsi:type="string">*/*/edit</item>
+                                    </item>
+                                    <item name="field" xsi:type="string">id</item>
+                                </item>
+                            </argument>
+                            <argument name="header_css_class" xsi:type="string">
+                                col-actions
+                            </argument>
+                            <argument name="column_css_class" xsi:type="string">
+                                col-actions
+                            </argument>
+                        </arguments>
+                    </block>
+                        
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

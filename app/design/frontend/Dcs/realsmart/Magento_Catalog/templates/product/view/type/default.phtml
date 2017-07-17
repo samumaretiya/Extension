@@ -1,0 +1,48 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /* @var $block \Magento\Catalog\Block\Product\View\AbstractView */?>
+<?php $_product = $block->getProduct() ?>
+
+<?php if ($block->displayProductStockStatus()): ?>
+    <?php if ($_product->isAvailable()): ?>
+        <div class="stock available" title="<?php /* @escapeNotVerified */ echo __('Availability') ?>">
+			<lable><?php /* @escapeNotVerified */ echo __('Availability:') ?>&nbsp</lable><span class="stockstatus"><?php /* @escapeNotVerified */ echo __('In stock') ?></span>
+        </div>
+    <?php else: ?>
+        <div class="stock unavailable" title="<?php /* @escapeNotVerified */ echo __('Availability') ?>">
+            <lable><?php /* @escapeNotVerified */ echo __('Availability:') ?>&nbsp</lable><span class="stockstatus"><?php /* @escapeNotVerified */ echo __('Out of stock') ?></span>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
+<?php
+	$specialprice = $_product->getSpecialPrice();
+	$specialPriceFromDate = $_product->getSpecialFromDate();
+	$specialPriceToDate = $_product->getSpecialToDate();
+
+	$today = time();
+	$price = $_product->getPrice();
+	if($price){
+		$sale = round((($price-$specialprice)/$price)*100);
+	}
+	if ($specialprice && $price > $specialprice) {
+		if ($today >= strtotime($specialPriceFromDate) && $today <= strtotime($specialPriceToDate) || $today >= strtotime($specialPriceFromDate) && is_null($specialPriceToDate)) { ?>
+			<div class="save-label-product">
+				<span class="save-product-text">
+				<?php 	
+					if($sale) { 
+						//$sale_label = 'SAVE';
+						echo 'SAVE &nbsp;'.$sale.'%'; 
+					}
+				?>
+				</span>
+			</div>
+		<?php }
+	}
+?>

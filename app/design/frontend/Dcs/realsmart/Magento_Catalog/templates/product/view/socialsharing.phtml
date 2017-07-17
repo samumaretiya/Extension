@@ -1,0 +1,29 @@
+<?php $_helper = $this->helper('Magento\Catalog\Helper\Output'); ?>
+
+<?php $_product = $block->getProduct(); ?>
+<?php $productName =  $_product->getName();  ?>
+<?php $productUrl =  $_product->getProductUrl(); ?>
+<?php $productImage = $_product->getImageUrl(); ?>
+
+<div class="socialshare-product">
+	<div class="sociallabel"><?php /* @escapeNotVerified */ echo __('Share:') ?>&nbsp</div>
+	<div class="facebook">
+		<a href="#"
+		   data-mage-init='{"popupWindow": {"windowURL":"<?php echo "https://www.facebook.com/sharer/sharer.php?u=".urlencode($productUrl)."&t".urlencode($productName); ?>","windowName":"facebook","width":640,"height":480,"top":0,"left":0,"resizable":1,"scrollbars":1}}'
+		   title="<?php /* @escapeNotVerified */ echo __('Facebook') ?>"
+		   class="action-default scalable add primary">
+			<span><?php /* @escapeNotVerified */ echo __('Facebook') ?></span>
+		</a>
+	</div>
+	
+	<div class="pinterest">
+		<a href="#"
+		   data-mage-init='{"popupWindow": {"windowURL":"<?php echo "https://pinterest.com/pin/create/button/?url=".urlencode($productUrl)."&t".urlencode($productName); ?>","windowName":"Pinterest","width":640,"height":480,"top":0,"left":0,"resizable":1,"scrollbars":1}}'
+		   title="<?php /* @escapeNotVerified */ echo __('Pinterest') ?>"
+		   class="action-default scalable add primary">
+			<span><?php /* @escapeNotVerified */ echo __('Pinterest') ?></span>
+		</a>
+	</div>
+
+</div>
+

@@ -1,0 +1,21 @@
+<div class="newandbestsellerwrapper">
+	
+	<div class="newandbestsellerwrapper-title">
+		<div id="newproduct" class="newproduct-title home-product-tab-title active">New Arrivals</div>
+		<div id="bestselling" class="bestselling-title home-product-tab-title">Best Sellers</div>
+	</div>
+	
+	<div class="newandbestsellerwrapper-content">
+		<div id="newproduct-content" class="active home-product-tab">
+			<?php echo $this->getLayout()->createBlock("Magento\Catalog\Block\Product\Widget\NewWidget")->setDisplayType("new_products")->setProductsCount("20")->setTemplate("product/widget/new/content/new_grid.phtml")->toHtml();
+			?>
+		</div>
+		
+		<div id="bestselling-content" class="home-product-tab">
+			<?php //echo $this->getLayout()->createBlock("Magento\Catalog\Block\Product\Widget\NewWidget")->setDisplayType("new_products")->setProductsCount("20")->setTemplate("product/widget/new/content/bestseller_grid.phtml")->toHtml(); ?>
+			<?php  echo $this->getLayout()->createBlock('Dcs\Bestseller\Block\BestsellerList')->setTemplate('Dcs_Bestseller::bestsellerblock.phtml')->toHtml(); ?>
+		</div>
+		
+	</div>
+	
+</div>

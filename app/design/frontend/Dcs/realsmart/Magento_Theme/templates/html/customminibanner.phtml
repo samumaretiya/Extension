@@ -1,0 +1,31 @@
+<?php /* ?>
+<?php
+	$_SERVER['HTTP_USER_AGENT'];
+	$iphone = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+	$android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
+	$palmpre = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
+	$berry = strpos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
+	$ipod = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
+	//$ipad = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
+?>
+<div class="mini-banner-wrapper">
+	<div class="mini-banner-inner cf">
+		<?php
+			if ($iphone || $android || $palmpre || $ipod || $berry == true) { 
+				echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('mobile_home_page_mini_banner')->toHtml();
+			}
+			else {
+				echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('home_page_mini_banner')->toHtml();
+			}
+		?>		
+	</div>
+</div>
+<?php */ ?>
+<div class="mini-banner-wrapper">
+	<div class="mini-banner-inner cf">
+		<?php	
+			echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('mobile_home_page_mini_banner')->toHtml();			
+			echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('home_page_mini_banner')->toHtml();
+		?>
+	</div>
+</div>

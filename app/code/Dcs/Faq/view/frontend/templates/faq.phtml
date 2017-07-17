@@ -1,0 +1,83 @@
+<?php if ($block->isEnabled()){?>
+
+			<ul class="faq-tabs-wrapper cf">
+				<?php
+					$faqCategoryCollection = $this->getLoadedFaqCategoryCollection();
+					$cntCollection =  count($faqCategoryCollection);
+					$i = 0;
+					if($cntCollection > 0)
+					{
+						foreach ($faqCategoryCollection as $faqCate)
+						{ ?>
+							<li <?php if ($i == 0) { ?>class="active"<?php } ?>>
+								<a name="<?php echo $faqId = $faqCate['id'] ?>" class="faq-navigator" href="#catefaq-<?php echo $faqCate['id']; ?>">
+									<?php echo $faqCate['name']; ?>		 		
+								</a>		 	
+							</li>
+						<?php
+							$i++;
+						}
+					}
+					else
+					{
+						echo __("No Result Found.");
+					}
+
+
+				?>
+			</ul>
+				<div class="faq-tab-content-wrapper">
+					<?php
+						$counter = 0;
+						foreach ($faqCategoryCollection as $faqCate)
+						{
+							$faqCateid = (int)$faqCate['id'];
+							$faqNotAssignCollection = null;
+							$allfaq = null;
+							$faqNotAssignCollection = $this->getLoadedfaqCollection()->addFieldToFilter('category', $faqCateid)->setOrder('rank' , 'ASC')->load();
+							$allfaq = $faqNotAssignCollection->getData();
+							(int)$cntCollection =  count($faqNotAssignCollection->getData());
+							if($cntCollection > 0)
+							{
+						?>
+                        <div class="faq-tab-box <?php if ($counter == 0) { ?>active<?php } ?>" id="catefaq-<?php echo $faqCateid;?>">
+                        <div class="faq-accord-title"><a name="<?php echo $faqId = $faqCate['id'] ?>" class="faq-navigator" href="#catefaq-<?php echo $faqCate['id']; ?>"><?php echo $faqCate['name']; ?></a></div>
+						<div class="category-faq">
+							<?php
+									foreach($allfaq as $faqans)
+									{ ?>
+
+										<div class="faqBox"><dt class="faqQuestion"><?php echo $faqans['question'];?></dt>	
+										<dd class="faqAnswer"><?php echo $faqans['answer']; ?></dd></div>
+
+								<?php } ?>
+						</div>
+                        </div>
+						<?php } 
+							$counter++;
+						} ?>
+				</div>
+<?php } ?>
+<script type="text/javascript">
+require([
+        'jquery',
+    ], function ($) {
+$(document).ready(function(){
+	$('.faq-tabs-wrapper li a').click(function(e){
+		e.preventDefault();
+		$(this).closest('li').siblings('li').removeClass('active');
+		$(this).closest('li').addClass('active');
+		$('.faq-tab-box').removeClass('active');
+		$($(this).attr('href')).addClass('active');
+	});
+	$('.faq-accord-title a').click(function(e){
+		e.preventDefault();
+		$('.faq-tab-box').removeClass('active');
+		$($(this).attr('href')).addClass('active');
+		if($(window).width()<768)
+		{
+			$('html, body').animate({scrollTop : $($(this).attr('href')).offset().top-$('header').height()},800);
+		}
+	});
+});});
+</script>
